@@ -5,6 +5,11 @@ node[:deploy].each do |app_name, deploy|
     author VARCHAR(63) NOT NULL,
     message TEXT,
     PRIMARY KEY (id)
+  )'CREATE TABLE #{node[:phpapp][:dbtable]}(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    vendor VARCHAR(63) NOT NULL,
+    message TEXT,
+    PRIMARY KEY (id)
   )'"
     not_if "/usr/bin/mysql -u#{deploy[:database][:username]} -p#{deploy[:database][:password]} #{deploy[:database][:database]} -e'SHOW TABLES' | grep #{node[:phpapp][:dbtable]}"
     action :run
