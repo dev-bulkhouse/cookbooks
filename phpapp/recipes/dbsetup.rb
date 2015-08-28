@@ -5,7 +5,7 @@ node[:deploy].each do |app_name, deploy|
     author VARCHAR(63) NOT NULL,
     message TEXT,
     PRIMARY KEY (id)
-  )'CREATE TABLE #{node[:phpapp][:dbtable]}(
+  )'CREATE TABLE #{node[:phpapp][:dbtable2]}(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     vendor VARCHAR(63) NOT NULL,
     message TEXT,
