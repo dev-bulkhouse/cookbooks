@@ -1,2 +1,1 @@
-default[:phpapp][:dbtable] = 'urler'
-default[:phpapp][:dbtable2] = 'vendor'
+default[:phpapp][:dbtable] = 'ci_sessions'
