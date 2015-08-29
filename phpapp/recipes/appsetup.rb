@@ -14,7 +14,7 @@ node[:deploy].each do |app_name, deploy|
     source "db-connect.php.erb"
     mode 0660
     group deploy[:group]
-
+    
     if platform?("ubuntu")
       owner "www-data"
     elsif platform?("amazon")   
