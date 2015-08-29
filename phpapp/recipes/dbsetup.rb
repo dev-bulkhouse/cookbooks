@@ -8,7 +8,7 @@ node[:deploy].each do |app_name, deploy|
     user_agent TEXT NOT NULL,
     PRIMARY KEY (session_id),
     KEY last_activity_idx (last_activity)
-  )"
+  )'"
     not_if "/usr/bin/mysql -u#{deploy[:database][:username]} -p#{deploy[:database][:password]} #{deploy[:database][:database]} -e'SHOW TABLES' | grep #{node[:phpapp][:dbtable]}"
     action :run
   end
