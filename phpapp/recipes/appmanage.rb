@@ -8,6 +8,7 @@ directory '#{deploy[:deploy_to]}/current/app/etc' do
       owner "apache"
     mode '0777'
     action :create
+    recursive true
   end
 
   directory '#{deploy[:deploy_to]}/current/media' do
@@ -19,5 +20,6 @@ directory '#{deploy[:deploy_to]}/current/app/etc' do
       owner "apache"
     mode '0777'
     action :create
+    recursive true
   end
 end
