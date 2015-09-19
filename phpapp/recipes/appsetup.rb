@@ -10,32 +10,6 @@ node[:deploy].each do |app_name, deploy|
     EOH
   end
   
-  directory '/etc/apache2' do
-  group deploy[:group]
-    
-    if platform?("ubuntu")
-      owner "ubuntu"
-    elsif platform?("amazon")   
-      owner "apache"
-  mode '0777'
-  action :create
-  recursive true
-end
-
-
-directory '#{deploy[:deploy_to]}/current/media' do
-  group deploy[:group]
-    
-    if platform?("ubuntu")
-      owner "ubuntu"
-    elsif platform?("amazon")   
-      owner "apache"
-  mode '0777'
-  action :create
-  recursive true
-end
-
-
   template "#{deploy[:deploy_to]}/current/application/config/database.php" do
     source "database.php.erb"
     mode 0660
