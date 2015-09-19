@@ -153,6 +153,18 @@ directory "#{deploy[:deploy_to]}/current/media/xmlconnect/custom/ok.gif" do
   end
 end
 
+directory "#{deploy[:deploy_to]}/current/media/xmlconnect/custom" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
 directory "#{deploy[:deploy_to]}/current/media/dhl" do
     group deploy[:group]
     if platform?("ubuntu")
