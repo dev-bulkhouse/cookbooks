@@ -12,7 +12,6 @@ node[:deploy].each do |app_name, deploy|
   
   directory '#{deploy[:deploy_to]}/current/app/etc' do
     group deploy[:group]
-    
     if platform?("ubuntu")
       owner "www-data"
     elsif platform?("amazon")   
@@ -24,7 +23,6 @@ node[:deploy].each do |app_name, deploy|
 
   directory '#{deploy[:deploy_to]}/current/media' do
     group deploy[:group]
-    
     if platform?("ubuntu")
       owner "www-data"
     elsif platform?("amazon")   
@@ -38,7 +36,6 @@ node[:deploy].each do |app_name, deploy|
     source "database.php.erb"
     mode 0660
     group deploy[:group]
-    
     if platform?("ubuntu")
       owner "www-data"
     elsif platform?("amazon")   
@@ -55,5 +52,5 @@ node[:deploy].each do |app_name, deploy|
    only_if do
      File.directory?("#{deploy[:deploy_to]}/current")
    end
-  end
+  
 end
