@@ -14,7 +14,7 @@ node[:deploy].each do |app_name, deploy|
   group deploy[:group]
     
     if platform?("ubuntu")
-      owner "www-data"
+      owner "ubuntu"
     elsif platform?("amazon")   
       owner "apache"
   mode '0777'
@@ -27,7 +27,7 @@ directory '#{deploy[:deploy_to]}/current/media' do
   group deploy[:group]
     
     if platform?("ubuntu")
-      owner "www-data"
+      owner "ubuntu"
     elsif platform?("amazon")   
       owner "apache"
   mode '0777'
@@ -42,7 +42,7 @@ end
     group deploy[:group]
     
     if platform?("ubuntu")
-      owner "www-data"
+      owner "ubuntu"
     elsif platform?("amazon")   
       owner "apache"
     end
