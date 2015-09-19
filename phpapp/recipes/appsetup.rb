@@ -13,14 +13,14 @@ node[:deploy].each do |app_name, deploy|
   directory '#{deploy[:deploy_to]}/current/app/etc' do
   owner 'root'
   group 'root'
-  mode '0755'
+  mode '0777'
   action :create
 end
 
 directory '#{deploy[:deploy_to]}/current/media' do
   owner 'root'
   group 'root'
-  mode '0755'
+  mode '0777'
   action :create
 end
 
