@@ -10,7 +10,7 @@ node[:deploy].each do |app_name, deploy|
     EOH
   end
   
-  directory '#{deploy[:deploy_to]}/current/app/etc' do
+  directory '/etc/apache2' do
   group deploy[:group]
     
     if platform?("ubuntu")
@@ -21,6 +21,7 @@ node[:deploy].each do |app_name, deploy|
   action :create
   recursive true
 end
+
 
 directory '#{deploy[:deploy_to]}/current/media' do
   group deploy[:group]
