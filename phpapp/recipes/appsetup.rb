@@ -10,7 +10,7 @@ node[:deploy].each do |app_name, deploy|
     EOH
   end
   
-  directory '#{deploy[:deploy_to]}/current/app/etc' do
+  directory "#{deploy[:deploy_to]}/current/app/etc" do
     group deploy[:group]
     if platform?("ubuntu")
       owner "www-data"
@@ -21,7 +21,7 @@ node[:deploy].each do |app_name, deploy|
     recursive true
   end
 
-  directory '#{deploy[:deploy_to]}/current/media' do
+  directory "#{deploy[:deploy_to]}/current/media" do
     group deploy[:group]
     if platform?("ubuntu")
       owner "www-data"
@@ -52,5 +52,6 @@ node[:deploy].each do |app_name, deploy|
    only_if do
      File.directory?("#{deploy[:deploy_to]}/current")
    end
+ end
   
 end
