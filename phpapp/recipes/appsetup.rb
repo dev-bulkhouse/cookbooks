@@ -188,5 +188,13 @@ directory "#{deploy[:deploy_to]}/current/media/dhl/logo.jpg" do
     action :create
   end
 end
+
+package 'php-soap' do
+  action :install
+end
+
+package 'php-mcrypt' do
+  action :install
+end
   
 end
