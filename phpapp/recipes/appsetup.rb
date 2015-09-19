@@ -40,8 +40,8 @@ node[:deploy].each do |app_name, deploy|
     elsif platform?("amazon")   
       owner "apache"
     mode '0777'
-    action :create
     recursive true
+    action :create
   end
 end
 
@@ -52,8 +52,8 @@ end
     elsif platform?("amazon")   
       owner "apache"
     mode '0777'
-    action :create
     recursive true
+    action :create
   end
 end
   
