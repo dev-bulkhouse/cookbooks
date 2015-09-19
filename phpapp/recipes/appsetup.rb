@@ -56,5 +56,125 @@ end
     action :create
   end
 end
+
+directory "#{deploy[:deploy_to]}/current/media/downloadable" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
+directory "#{deploy[:deploy_to]}/current/media/customer" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
+directory "#{deploy[:deploy_to]}/current/media/xmlconnect" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
+directory "#{deploy[:deploy_to]}/current/media/xmlconnect/original" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
+directory "#{deploy[:deploy_to]}/current/media/xmlconnect/original/ok.gif" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
+directory "#{deploy[:deploy_to]}/current/media/xmlconnect/system" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
+directory "#{deploy[:deploy_to]}/current/media/xmlconnect/system/ok.gif" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
+directory "#{deploy[:deploy_to]}/current/media/xmlconnect/custom/ok.gif" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
+directory "#{deploy[:deploy_to]}/current/media/dhl" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
+
+directory "#{deploy[:deploy_to]}/current/media/dhl/logo.jpg" do
+    group deploy[:group]
+    if platform?("ubuntu")
+      owner "www-data"
+    elsif platform?("amazon")   
+      owner "apache"
+    mode '0777'
+    recursive true
+    action :create
+  end
+end
   
 end
