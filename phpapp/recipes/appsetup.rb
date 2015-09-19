@@ -10,21 +10,6 @@ node[:deploy].each do |app_name, deploy|
     EOH
   end
   
-  directory '#{deploy[:deploy_to]}/current/app/etc' do
-    owner 'root'
-    group 'root'
-    mode '0777'
-    action :create
-  end
-
-  directory '#{deploy[:deploy_to]}/current/media' do
-    owner 'root'
-    group 'root'
-    mode '0777'
-    action :create
-  end
-
-
   template "#{deploy[:deploy_to]}/current/application/config/database.php" do
     source "database.php.erb"
     mode 0660
